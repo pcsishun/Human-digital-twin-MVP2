@@ -9,10 +9,9 @@
                 <div >
                     <p>Contact us</p>
                 </div>
-                <div >
+                <!-- <div >
                     <img src="../../assets/phone.png" width="60" height="60"/>
-                </div>
-                
+                </div> -->
             </div>
         </div>
     </div>
@@ -22,7 +21,7 @@
 export default {
 
 }
-</script>
+</script> 
 
 <style scoped>
 
@@ -55,12 +54,15 @@ export default {
         text-align: right;
     }
     .set-box{
+        margin-top: 50px;
+        margin-right: 25px;
+        font-size: 20px;
+        font-weight: bold;
         text-align: right;
     }
-    .contact-text{
-        border: 1px solid red;
+    /* .contact-text{
         text-align: right;
-    }
+    } */
 }
 
 

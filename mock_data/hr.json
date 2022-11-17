@@ -1,0 +1,16 @@
+[
+    {
+        "username":"admin",
+        "password":"12345",
+        "tenan":"test",
+        "position":"hr manager",
+        "department":"hr",
+        "permission":"admin",
+        "firstname":"Sam",
+        "lastname":"Samson",
+        "email":"test@test.com",
+        "personal":"INTF",
+        "tel":"1234567890",
+        "address":"ABC"
+    }
+]
