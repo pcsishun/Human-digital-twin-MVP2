@@ -64,21 +64,21 @@ export default {
 <style scoped>
 .navbar-container{
     display: grid;
-    height: 100px;
+    height: 80px;
     background: rgb(224, 224, 224);
     grid-template-columns:  1fr 1fr;
 }
 
 .set-bar-open-lr{
     width: 60px;
-    margin-top: 10px;
+    margin-top: 6px;
     border: 4px solid black;
     border-radius: 30px;
     transition: 0.5s
 }
 .set-bar-open-c{
     width: 45px;
-    margin-top: 10px;
+    margin-top: 6px;
     border: 4px solid black;
     border-radius: 30px;
     transition: 0.5s
@@ -86,8 +86,8 @@ export default {
 
 .set-bar-close-lr{
     width: 45px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 6px;
+    margin-bottom: 6px;
     border: 4px solid black;
     border-radius: 30px;
     transition: 0.5s
@@ -95,7 +95,7 @@ export default {
 
 .set-bar-close-c{
     width: 65px;
-    margin-top: 10px;
+    margin-top: 6px;
     border: 4px solid black;
     border-radius: 30px;
     transition: 0.5s

@@ -1,11 +1,10 @@
 <template>
     <div :class="$store.state.cssMenuOpen">
         <div class="bu-selection text-center"  v-if="$store.state.cssMenuOpen === 'set-menu-open'">
-            <div > 
+            <div>
                 <img v-if="selectionBusiness === 'SCG'" class="text-center m-auto rounded-md" src="../../assets/SCG.jpg" width="150" height="150"/>
                 <img v-if="selectionBusiness === 'Nexter'" class="text-center m-auto rounded-md" src="../../assets/nexter.png" width="150" height="150"/>
             </div>
-
             <button @click="haddleBtnBu" class="btn-bu mt-10 border-2 text-white font-bold text-lg border-emerald-400 rounded-2xl bg-emerald-400">
                 <div class="flex justify-center">
 
@@ -45,12 +44,16 @@
                     
                     <div class="ml-3">
                         <button class="w-10/12">
-                            <div class="btn-1 text-left">Home</div>
+                            <div class="btn-1 text-left">
+                                <RouterLink to="/">Home</RouterLink>
+                            </div>
                         </button>
                     </div>
                     <div class="ml-3 mt-10">
                         <button class="w-10/12">
-                            <div class="btn-1 text-left">Filter</div>
+                            <div class="btn-1 text-left">
+                                <RouterLink to="/insight">Filter</RouterLink>
+                            </div>
                         </button>
                     </div>
                     <div class="ml-3 mt-10">
@@ -65,7 +68,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -81,6 +83,7 @@ export default {
     },
     beforeMount(){
         this.selectionBusiness = this.buSelection
+        this.$store.state.buinessUnit = this.buSelection
     },
     methods:{
         haddleBtnBu(){
@@ -93,6 +96,8 @@ export default {
 
         haddleSelelectBu(){
             this.selectionBusiness = this.buSelection
+            this.$store.state.buinessUnit = this.buSelection
+            console.log("menu pages ",this.$store.state.buinessUnit)
         }
     },
     mounted(){
@@ -110,14 +115,14 @@ export default {
     }
     .set-menu-open{
         width: 250px;
-        height: 100vh;
+        height: 110vh;
         background-color: rgb(224, 254, 254);
         transition: 1s;
     }
 
     .set-menu-close{
         width: 0px;
-        height: 100vh;
+        height: 110vh;
         background-color: rgb(216, 255, 255);
         transition: 1s;
     }

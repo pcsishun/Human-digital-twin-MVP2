@@ -10,7 +10,7 @@ import Footer from './components/footer/Footer.vue'
     <div class="top-page">
       <Navbar/>
     </div>
-    <div class="body-page">
+    <div class="body-page flex">
       <div class="menu-set">
         <Menu/>
       </div>
@@ -37,4 +37,8 @@ body{
   margin:0px;
 }
 
+.body-set{
+
+  width: 100%;
+}
 </style>
