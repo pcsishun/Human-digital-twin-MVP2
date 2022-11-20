@@ -29,7 +29,6 @@ export default {
         // mockSCGDataNor: [0.94, 0.8, 0.87, 0.9, 0.73],
         // mockSCGDataAxi: [0.25, 0.14, 0.10, 0.3, 0.48],
         // mockSCGDataDepr: [0.11, 0.12, 0.05, 0.24, 0.1]
-            
         datatestSCG: {
             type: "bar",
             data: {

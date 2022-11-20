@@ -1,7 +1,12 @@
 <template>
     <div class="home-container">
-        <div class="set-title text-[24px] h-[80px] text-black font-bold">
-            <div class="ml-10 translate-y-5">Company overview</div>
+        <div class="set-title text-[24px] h-[80px] text-black font-bold grid grid-cols-2">
+            <div class="ml-10 translate-y-5 text-left">Company overview</div>
+            <!-- <div class="text-right mr-20 mt-5">
+                <button @click="haddleToInsight" class="btn-insight bg-teal-600 hover:bg-teal-700 w-[150px] h-[40px] text-white rounded-lg text-[15px]">
+                    Insight Analysis
+                </button>
+            </div> -->
         </div>
         <div class="w-[95%] m-auto mb-5">
             <hr/>
@@ -91,12 +96,9 @@
                             <h2>Per minute</h2>
                         </div>
                     </div>
-
                 </div>
-
             </div>
             <div class="card2">
-
                 <div class="set-card rounded-lg p-10">
                     <div class="text-right mb-5 text-[18px] font-bold">
                         Emotion: Facial-expressed
@@ -130,11 +132,7 @@
                         <hr/>
                     </div>
                     <div class="set-chart">
-                        <textarea class="border border-gray-600 rounded-lg w-[100%] h-[200px]"></textarea>
-                        <div class="text-right mt-10">
-                            <button class="bg-cyan-500 w-[150px] h-[60px] text-[18px] text-white rounded-lg hover:bg-cyan-600 active:bg-cyan-700">Save</button>
-                            <button class="bg-red-500 w-[150px] h-[60px] text-[18px] text-white rounded-lg ml-5 hover:bg-red-600 active:bg-red-700">Clear</button>
-                        </div>
+                        <Comment/>
                     </div>
                 </div>
 
@@ -148,17 +146,24 @@ import BarChart from '../components/chart/selfreport/Barchart.vue'
 import EmotionDetect from '../components/chart/emotionDetect/EmotionDetect.vue'
 import ScaleSentiment from '../components/chart/scaleSentiment/ScaleSentiment.vue'
 import WordCloud from '../components/chart/wordCloud/WordCloud.vue'
+import Comment from '../components/comment/Comment.vue'
 
 export default {
     components:{
         BarChart,
         EmotionDetect,
         ScaleSentiment,
-        WordCloud
+        WordCloud,
+        Comment
     },
     data(){
         return{
 
+        }
+    },
+    methods:{
+        haddleToInsight(){
+            this.$router.push("/insight")
         }
     }
 }
@@ -167,5 +172,13 @@ export default {
 <style scoped>
 .set-card{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.btn-insight{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.btn-insight:active{
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
 }
 </style>
