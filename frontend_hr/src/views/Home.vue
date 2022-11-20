@@ -11,9 +11,8 @@
         <div class="w-[95%] m-auto mb-5">
             <hr/>
         </div>  
-        <div class="grid grid-cols-2 ml-10 mr-10 gap-x-[50px] overflow-y-scroll h-[90vh] pb-[50px]">
+        <div class="grid grid-cols-2 ml-10 mr-10 gap-x-[50px] overflow-y-scroll h-[110vh] pb-[50px]">
             <div class="card1">
-
                 <div class="set-card rounded-lg p-10">
                     <div class="text-right mb-5 text-[18px] font-bold">
                         Emotion: Self-reported
@@ -29,7 +28,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="set-card rounded-lg p-10 mt-10">
                     <div class="text-right mb-5 text-[18px] font-bold">
                         Cognitive: Sentiment Analysis
@@ -45,7 +43,6 @@
                         </div>
                     </div>
                 </div>
-
                 <div class="set-card rounded-lg p-10 mt-10">
                     <div class="text-right mb-5 text-[18px] font-bold">
                         Physiological signals

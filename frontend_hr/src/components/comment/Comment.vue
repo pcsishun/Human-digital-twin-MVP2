@@ -1,5 +1,5 @@
 <template>
-    <div class="comment-set">
+    <div class="comment-set ">
         <textarea class="border border-gray-600 rounded-lg w-[100%] h-[200px]" v-model="commentText"></textarea>
         <div class="comment-histroy m-[10px] max-h-[300px] overflow-y-scroll" >
             <table class="w-[100%]" >
@@ -66,7 +66,7 @@ export default {
                     text: this.commentText
                 }
                 this.$store.state.listComment.push(setText);
-                console.log("comment: ",this.$store.state.listComment);
+                this.$store.state.showPopupEmployee = false;
                 this.commentText = ""
             }else{
                 alert("Cannot save empty comment.")

@@ -1,5 +1,6 @@
 <template>
     <div :class="$store.state.cssMenuOpen">
+        <div class="pt-10"></div>
         <div class="bu-selection text-center"  v-if="$store.state.cssMenuOpen === 'set-menu-open'">
             <div>
                 <img v-if="selectionBusiness === 'SCG'" class="text-center m-auto rounded-md" src="../../assets/SCG.jpg" width="150" height="150"/>
@@ -7,7 +8,6 @@
             </div>
             <button @click="haddleBtnBu" class="btn-bu mt-10 border-2 text-white font-bold text-lg border-emerald-400 rounded-2xl bg-emerald-400">
                 <div class="flex justify-center">
-
                     <div class="mr-2 mt-1">
                         Business Unit
                     </div>
@@ -115,7 +115,7 @@ export default {
     }
     .set-menu-open{
         width: 250px;
-        height: 110vh;
+        height: 130vh;
         background-color: rgb(224, 254, 254);
         transition: 1s;
     }

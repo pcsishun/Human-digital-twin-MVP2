@@ -1,8 +1,9 @@
 <template>
     <div class="insight-container">
         <PopupFilter v-if="$store.state.showPopupFilter === true"/>
+        <PopupEmployee v-if="$store.state.showPopupEmployee === true"/>
         <div class="set-title text-[24px] h-[80px] text-black font-bold ">
-            <div class="ml-10 mt-5 text-left">Company filter</div>
+            <div class="ml-10 mt-5 text-left">Employee filter</div>
             <div class="ml-10 mt-3 flex">
                 <div class="flex text-[15px] mr-5 ">
                     <div class="mr-3 flex">
@@ -27,14 +28,6 @@
                         </svg>
                     </div>
                 </button>
-                <!-- <button  class="mr-3 btn-insight bg-teal-600 hover:bg-teal-700 w-[150px] h-[40px] text-white rounded-lg text-[15px]">
-                    <div class="flex justify-center">
-                        <span class="mr-3">Position</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                            <path fill-rule="evenodd" d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                </button> -->
                 <button  class=" mr-3 btn-insight bg-teal-600 hover:bg-teal-700 w-[40px] h-[40px] text-white rounded-full text-[15px]">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 m-auto">
                         <path d="M8.25 10.875a2.625 2.625 0 115.25 0 2.625 2.625 0 01-5.25 0z" />
@@ -46,22 +39,56 @@
         <div class="w-[95%] m-auto mb-5 mt-10">
             <hr/>
         </div> 
-
+        <div class="body-insight">
+            <div class="mt-5 mb-5 text-[20px] font-bold w-[95%] m-auto">
+                Business overview
+            </div>
+            <div class="body-container">
+                <div class="set-card rounded-lg p-3">
+                    <div>
+                        <img src="../assets/good.png" width="30" height="30"/>
+                    </div>
+                    <Barchart/>
+                    <div>
+                        <img src="../assets/bad.png" width="30" height="30"/>
+                    </div>
+                </div>
+                <div class="set-card rounded-lg p-3">
+                    <ScaleSentiment/>
+                </div>
+                <div class="set-card rounded-lg p-3">
+                    <WordCloud/>
+                </div>
+            </div>
+            <div class="mt-5 mb-5 w-[95%] m-auto"><hr/></div>
+            <div class="body-depart-container">
+                <div class="mt-5 mb-5 text-[20px] font-bold w-[95%] m-auto">
+                    Employee overview
+                </div>
+                <div>
+                    <Employee/>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
 import PopupFilter from '../components/popup_filter/PopupFilter.vue'
-// import PopupStatus from '../components/popup_filter/PopupStatus.vue'
-// import PopupPosition from '../components/popup_filter/PopupPosition.vue'
-// import PopupDepartment from '../components/popup_filter/PopupDepartment.vue'
+import Barchart from '../components/chart/selfReport/Barchart.vue'
+import ScaleSentiment from '../components/chart/scaleSentiment/ScaleSentiment.vue'
+import WordCloud from '../components/chart/wordCloud/WordCloud.vue'
+import Employee from '../components/employee/Employee.vue'
+import PopupEmployee from '../components/popup_filter/PopupEmployee.vue';
 
 export default {
     components:{
-        PopupFilter
-        // PopupStatus,
-        // PopupPosition,
-        // PopupDepartment
+        PopupFilter,
+        Barchart,
+        ScaleSentiment,
+        WordCloud,
+        Employee,
+        PopupEmployee
     }, 
     data(){
         return{
@@ -88,4 +115,21 @@ export default {
     input{
         text-indent: 5px;
     }
+    .body-container{
+        display: grid;
+        grid-template-columns:  1fr 1fr 1fr;
+        width: 95%;
+        grid-column-gap: 10px;
+        margin: auto;
+        
+    }
+    .set-card{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    }
+
+
+
+
+
+
 </style>

@@ -17,15 +17,15 @@
             <div class="text-[14px]">
                 <span class="mr-3">
                     <label>normal: </label>
-                    <input type="radio" name="status-select" v-model="statusEmotion" value="normal"/>
+                    <input type="radio" name="status-select" v-model="perSaveStatus" value="normal"/>
                 </span>
                 <span class="mr-3">
                     <label>alert: </label>
-                    <input type="radio" name="status-select"  v-model="statusEmotion" value="alert"/>
+                    <input type="radio" name="status-select"  v-model="perSaveStatus" value="alert"/>
                 </span>
                 <span class="mr-3">
                     <label>all: </label>
-                    <input type="radio" name="status-select" v-model="statusEmotion" value="all"/>
+                    <input type="radio" name="status-select" v-model="perSaveStatus" value="all"/>
                 </span>
             </div>
         </div>
@@ -37,13 +37,13 @@
                 Department: 
             </div>
             <div>
-                <input class="" list="department-list"/>
+                <input class="" list="department-list" v-model="perSaveDepartment" />
                 <datalist id="department-list">
-                    <option>all</option>
-                    <option>R&D</option>
-                    <option>Marketing</option>
-                    <option>IT</option>
-                    <option>Accounting</option>
+                    <option value="all">all</option>
+                    <option value="R&D">R&D</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="IT">IT</option>
+                    <option value="Accounting">Accounting</option>
                 </datalist>
             </div>
         </div>
@@ -55,13 +55,13 @@
                 Position: 
             </div>
             <div>
-                <input class="" list="position-list"/>
+                <input class="" list="position-list" v-model="perSavePosition"/>
                 <datalist id="position-list">
-                    <option>all</option>
-                    <option>GM</option>
-                    <option>Data-sci</option>
-                    <option>Fullstack developer</option>
-                    <option>Devops</option>
+                    <option value="all">all</option>
+                    <option value="GM">GM</option>
+                    <option value="Data-sci">Data-sci</option>
+                    <option value="Fullstack developer">Fullstack developer</option>
+                    <option value="Devops">Devops</option>
                 </datalist>
             </div>
         </div>
@@ -69,7 +69,7 @@
             <hr/>
         </div>
         <div class="mt-10 text-center m-auto ">
-            <button class="w-[200px] h-[40px] bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700">Submit</button> 
+            <button @click="haddleSaveFilter" class="w-[200px] h-[40px] bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700">Submit</button> 
         </div>
     </div>
 </template>
@@ -81,14 +81,20 @@ export default {
     },
     data(){
         return{
-            statusEmotion: "all",
-            departmentSelect:"all",
-            positionSelect: "all"
+            perSaveStatus:"all",
+            perSaveDepartment:"all",
+            perSavePosition:"all" 
             
         }
     },
     methods:{
         haddleClosePopup(){
+            this.$store.state.showPopupFilter = false
+        },
+        haddleSaveFilter(){
+            this.$store.state.statusSelect = this.perSaveStatus
+            this.$store.state.departmentSelect = this.perSaveDepartment
+            this.$store.state.positionSelect = this.perSavePosition
             this.$store.state.showPopupFilter = false
         }
     },
